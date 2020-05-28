@@ -2,7 +2,7 @@
 
 [info]
 key = "6bv"
-description = "Birdview Beta-1"
+description = "Birdview Beta-1 v2"
 
 [rotor_default]
 axis      = [0.0, 0.0, -1.0]
