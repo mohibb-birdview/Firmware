@@ -1,0 +1,108 @@
+#!/bin/sh
+#
+# @name Birdview Beta 1
+#
+# @type Hexarotor Coaxial
+# @class Copter
+#
+# @output MAIN1 front right top, CW; angle:60; direction:CW
+# @output MAIN2 front right bottom, CCW; angle:60; direction:CCW
+# @output MAIN3 back top, CW; angle:180; direction:CW
+# @output MAIN4 back bottom, CCW; angle:180; direction:CCW
+# @output MAIN5 front left top, CW; angle:-60; direction:CW
+# @output MAIN6 front left bottom, CCW;angle:-60; direction:CCW
+#
+# @output AUX1 feed-through of RC AUX1 channel
+# @output AUX2 feed-through of RC AUX2 channel
+# @output AUX3 feed-through of RC AUX3 channel
+#
+# @maintainer Mohibb Malik <mohibb@birdview.tech>
+#
+
+sh /etc/init.d/rc.mc_defaults
+
+set MIXER hexa_cox_bv
+
+# Need to set all 8 channels
+set PWM_OUT 12345678
+
+if [ $AUTOCNF == yes ]
+then
+	# Battery
+	param set BAT_N_CELLS 12
+
+	# Circuit breakers
+	param set CBRK_IO_SAFETY 22027
+	param set CBRK_USB_CHK 197848
+
+	# Flight modes
+	param set COM_FLTMODE1 2
+	param set COM_FLTMODE2 7
+	param set COM_FLTMODE4 1
+	param set COM_FLTMODE5 1
+	param set COM_FLTMODE6 0
+
+	# IMU position
+	param set EKF2_IMU_POS_X 0.5
+	param set EKF2_IMU_POS_Y 0
+	param set EKF2_IMU_POS_Z 0
+
+	# Tuning
+	param set MC_PITCH_P 2.2
+	param set MC_PITCHRATE_P 0.145
+	param set MC_PITCHRATE_I 0.21
+	param set MC_PITCHRATE_D 0.0032
+
+	param set MC_ROLL_P 2.298
+	param set MC_ROLLRATE_P 0.112
+	param set MC_ROLLRATE_I 0.21
+	param set MC_ROLLRATE_D 0.0035
+	 
+	param set MC_YAW_P 1.8
+	param set MC_YAWRATE_P 0.4
+	param set MC_YAWRATE_I 0.2
+	param set MC_YAWRATE_D 0.0
+
+	# Throttle
+	param set MPC_THR_HOVER 0.59
+
+	# PWM
+	param set PWM_MAX 1950
+	param set PWM_MIN 970
+
+	# RC Channels
+	param set RC1_MAX 1900
+	param set RC1_MIN 1100
+	param set RC1_REV -1
+	param set RC1_TRIM 1500
+
+	param set RC2_MAX 1900
+	param set RC2_MIN 1100
+	param set RC2_REV 1
+	param set RC2_TRIM 1502
+
+	param set RC3_MAX 1891
+	param set RC3_MIN 1112
+	param set RC3_REV 1
+	param set RC3_TRIM 1112
+
+	param set RC4_MAX 1900
+	param set RC4_MIN 1100
+	param set RC4_REV -1
+	param set RC4_TRIM 1500
+
+	param set RC5_MAX 1901
+	param set RC5_MIN 1099
+	param set RC5_REV 1
+	param set RC5_TRIM 1500
+
+	param set RC6_MAX 1901
+	param set RC6_MIN 1099
+	param set RC6_REV 1
+	param set RC6_TRIM 1500
+
+	# Logging
+	param set SDLOG_PROFILE 19
+	param set SER_TEL1_BAUD 921600
+
+fi

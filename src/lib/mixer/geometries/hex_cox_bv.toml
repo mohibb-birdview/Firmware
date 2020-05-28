@@ -1,0 +1,40 @@
+# Birdview Beta-1
+
+[info]
+key = "6bv"
+description = "Birdview Beta-1"
+
+[rotor_default]
+axis      = [0.0, 0.0, -1.0]
+Ct        = 1.0
+Cm        = 0.05
+
+[[rotors]]
+name      = "front_right_top"
+position  = [ 0.3956,  0.7143, -0.0330]
+direction = "CW"
+
+[[rotors]]
+name      = "front_right_bottom"
+position  = [ 0.3956,  0.7143,  0.0330]
+direction = "CCW"
+
+[[rotors]]
+name      = "rear_top"
+position  = [-1.0000,  0.0000, -0.1758]
+direction = "CW"
+
+[[rotors]]
+name      = "rear_bottom"
+position  = [-1.0000,  0.0000, -0.1099]
+direction = "CCW"
+
+[[rotors]]
+name      = "front_left_top"
+position  = [ 0.3956, -0.7143, -0.0330]
+direction = "CW"
+
+[[rotors]]
+name      = "front_left_bottom"
+position  = [ 0.3956, -0.7143,  0.0330]
+direction = "CCW"
